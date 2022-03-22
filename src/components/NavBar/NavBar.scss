@@ -1,0 +1,16 @@
+@import '../../assets/Colors.scss';
+
+nav {
+    
+    a {
+        color: $white;
+        padding: 20px 15px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: $second-color;
+            position: relative;
+        }
+    }
+}

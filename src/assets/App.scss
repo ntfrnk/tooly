@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&family=Work+Sans:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
+@import './Colors.scss';
+@import './Modules.scss';
+
+body {
+    background: $background;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    font-family: Barlow;
+}
+
+header {
+    background: $main-color;
+    height: 70px;
+    border-bottom: solid 5px $second-color;
+    
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.6rem;
+            color: #fff;
+            padding: 0 0;
+
+            span {
+                font-weight: 200;
+            }
+        }
+    }
+}
