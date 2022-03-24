@@ -1,0 +1,20 @@
+@import '../../assets/Colors.scss';
+
+.widget {
+    position: relative;
+
+    .counter {
+        position: absolute;
+        color: $white;
+        top: 12px;
+        right: -10px;
+        background-color: red;
+        font-size: 10px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 14px;
+        font-weight: 600;
+    }
+}

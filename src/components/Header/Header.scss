@@ -1,0 +1,26 @@
+@import '../../assets/Colors.scss';
+
+header {
+	background: $main-color;
+	height: 70px;
+	border-bottom: solid 5px $second-color;
+		
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%;
+
+		.logo {
+			font-size: 2rem;
+			font-weight: 600;
+			line-height: 1.6rem;
+			color: #fff;
+			padding: 0 0;
+
+			span {
+				font-weight: 200;
+			}
+		}
+	}
+}

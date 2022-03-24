@@ -1,4 +1,5 @@
 import './NavBar.scss'
+import CartWidget from '../CartWidget/CartWidget'
 
 const NavBar = () => {
 
@@ -8,6 +9,7 @@ const NavBar = () => {
             <a href="#">Electricidad</a>
             <a href="#">Carpintería</a>
             <a href="#">Plomería</a>
+            <CartWidget />
         </nav>
     )
 }
