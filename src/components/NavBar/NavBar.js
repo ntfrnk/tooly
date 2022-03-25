@@ -9,7 +9,7 @@ const NavBar = () => {
             <a href="#">Electricidad</a>
             <a href="#">Carpintería</a>
             <a href="#">Plomería</a>
-            <CartWidget />
+            <a href="#"><CartWidget /></a>
         </nav>
     )
 }

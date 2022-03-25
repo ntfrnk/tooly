@@ -3,11 +3,12 @@
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     
     a {
         color: $white;
-        padding: 20px 15px;
+        padding: 0 15px;
+        line-height: 50px;
         text-decoration: none;
         transition: all 0.3s ease;
 
