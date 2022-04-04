@@ -1,0 +1,94 @@
+
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: solid 1px lighten($black, 60%);
+    color: lighten($black, 20%);
+    cursor: pointer;
+
+
+    /**
+     * SIZING
+     */
+
+    &.small {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    &.large {
+        padding: 0.6rem 1.1rem;
+        font-size: 1.15rem;
+    }
+
+
+    /**
+     * BORDER RADIUS STYLE
+     */
+
+    &.rounded {
+        border-radius: 5px;
+    }
+
+    &.pill {
+        border-radius: 20px;
+    }
+
+    &.circle {
+        border-radius: 50%;
+    }
+
+
+    /**
+     * TYPE OF BUTTON
+     */
+
+    &.outline {
+        background: $white;
+
+        &.main {
+            color: $main-color;
+            border-color: $main-color;
+        }
+
+        &.second {
+            color: $second-color;
+            border-color: $second-color;
+        }
+    }
+
+    &.solid {
+        color: $white;
+
+        &.main {
+            background: $main-color;
+            border-color: $main-color;
+            
+            &:hover {
+                background: darken($main-color, 10%);
+            }
+        }
+
+        &.second {
+            background: $second-color;
+            border-color: $second-color;
+
+            &:hover {
+                background: darken($second-color, 10%);
+            }
+        }
+    }
+
+
+    /**
+     * SIZING
+     */
+
+    &.bold {
+        font-weight: 600;
+    }
+
+    &.black {
+        font-weight: 800;
+    }
+}

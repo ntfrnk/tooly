@@ -1,6 +1,5 @@
 import './CartWidget.scss'
 import Icon from '../Icon/Icon'
-import { Icons } from '../../services/IconsService'
 
 const CartWidget = () => {
 
@@ -8,7 +7,7 @@ const CartWidget = () => {
 
     return (
         <div className="widget">
-            <Icon path={Icons.cart} color="#FFF" style={style} size={22} />
+            <Icon name="cart" color="#FFF" style={style} size={22} />
             <span className="counter">5</span>
         </div>
     )
