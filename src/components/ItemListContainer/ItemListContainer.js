@@ -1,6 +1,7 @@
  import './ItemListContainer.scss';
  import Icon from '../Icon/Icon';
  import ItemCount from '../ItemCount/ItemCount';
+ import ItemList from '../ItemList/ItemList';
 
  const ItemListContainer = (props) => {
 
@@ -21,6 +22,7 @@
                 { defaultProps.greeting }
             </h1>
             <ItemCount initial={ 0 } stock={ 10 } onAdd={ onAdd } />
+            <ItemList />
         </div>
     )
  }

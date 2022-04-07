@@ -1,0 +1,12 @@
+@import '../../../assets/scss/colors.scss';
+
+.item {
+    border: solid 1px lighten($black, 70%);
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    img {
+        width: 100%;
+    }
+}
