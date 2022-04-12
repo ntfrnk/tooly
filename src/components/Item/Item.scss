@@ -1,12 +1,18 @@
-@import '../../../assets/scss/colors.scss';
+@import '/src/assets/Colors.scss';
 
 .item {
     border: solid 1px lighten($black, 70%);
     border-radius: 5px;
     box-sizing: border-box;
-    overflow-x: hidden;
+    margin: 0 15px 30px;
+    padding-bottom: 1.5rem;
 
-    img {
-        width: 100%;
+    .image {
+        box-sizing: border-box;
+        overflow-x: hidden;
+        
+        img {
+            width: 100%;
+        }
     }
 }

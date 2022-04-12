@@ -2,9 +2,10 @@
 .listado {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin: 0 -15px;
 
-    .item {
-        flex-basis: 25%;
+    .item-container {
+        flex-basis: calc((100% / 12) * 3);
     }
 }

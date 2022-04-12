@@ -1,27 +1,25 @@
-import { useState } from 'react'
 import Item from '../Item/Item'
-import AsyncMock from '../../services/AsyncMock'
 import './ItemList.scss'
 
-const ItemList = () => {
+const ItemList = ({products}) => {
 
-    const [products, setProducts] = useState([]);
-
-    setTimeout(() => {
-
-        new Promise((resolve, reject) => {
-            resolve(AsyncMock)
-        }).then((resp) => {
-            setProducts(resp)
-        })
-
-    }, 2000);
+    let localProducts = [{
+        id: 0,
+        name: '',
+        price: '',
+        detail: '',
+        image: ''
+    }]
+    localProducts = products
 
     return (
-        <div>
-            <h1>ItemList</h1>
+        <div className="container">
+            <h1 className="pb30">Listado de productos</h1>
             <div className="listado">
-                {products.map(product => (<Item key={product.id} item={product} />))}
+                {localProducts.map(product => (
+                    <div className="item-container" key={product.id}>
+                        <Item item={product} />
+                    </div>))}
             </div>
         </div>
     );

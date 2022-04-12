@@ -1,3 +1,5 @@
+import './Item.scss';
+
 const Item = (props) => {
 
     let item = props.item;
