@@ -1,4 +1,5 @@
 import './ItemDetail.scss';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = (item) => {
 
@@ -14,6 +15,9 @@ const ItemDetail = (item) => {
                     <p>{item.detail}</p>
                     <p>{item.price}</p>
                 </div>
+            </div>
+            <div className="ac">
+                <Link to="/">« Volver al listado</Link>
             </div>
         </>
     )

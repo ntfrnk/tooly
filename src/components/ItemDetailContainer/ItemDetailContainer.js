@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import AsyncMock from '../../services/AsyncMock';
 import ItemDetail from '../ItemDetail/ItemDetail'
 import './ItemDetailContainer.scss';
@@ -7,19 +8,21 @@ const ItemDetailContainer = () => {
 
     let [item, setItem] = useState({})
 
-    const getItem = () => {
+    let urlParams = useParams();
 
+    const getItem = () => {
         setTimeout(() => {
             new Promise((resolve, reject) => { 
                 resolve(AsyncMock)
             }).then((response) => {
-                setItem(response[0])
+                setItem(response[urlParams.id])
             });
         }, 2000);
-
     }
 
-    getItem()
+    useEffect(() => {
+        getItem()
+    }, []);
 
     return (
         <>

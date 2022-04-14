@@ -1,4 +1,5 @@
 import './Item.scss';
+import { Link } from 'react-router-dom';
 
 const Item = (props) => {
 
@@ -11,9 +12,9 @@ const Item = (props) => {
             </div>
             <h3>{item.name}</h3>
             <p>{item.price}</p>
-            <button type="button" className="btn solid second rounded small">
+            <Link to={'/detail/' + item.id} className="btn solid second rounded small">
                 Ver este producto
-            </button>
+            </Link>
         </div>
     )
 }

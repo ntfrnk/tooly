@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import AsyncMock from '../../services/AsyncMock'
 import './ItemListContainer.scss';
 import Icon from '../Icon/Icon';
@@ -7,6 +8,8 @@ import ItemList from '../ItemList/ItemList';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
  const ItemListContainer = (props) => {
+
+    let urlParams = useParams();
 
     let defaultProps = {
         greeting: 'Hola mundo!'
@@ -20,27 +23,29 @@ import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
     const [products, setProducts] = useState([]);
 
-    setTimeout(() => {
+    const getProducts = () => {
+        setTimeout(() => {
+            new Promise((resolve, reject) => {
+                if(urlParams.category != undefined) {
+                    resolve(AsyncMock.filter(item => item.category_id == urlParams.category))
+                } else {
+                    resolve(AsyncMock)
+                }
+            }).then((resp) => {
+                setProducts(resp)
+            })
+        }, 2000);
+    }
 
-        new Promise((resolve, reject) => {
-            resolve(AsyncMock)
-        }).then((resp) => {
-            setProducts(resp)
-        })
-
-    }, 2000);
+    useEffect(() => {
+        getProducts()
+    }, []);
 
     return (
         <div className="greeting">
             <Icon type="emoji" name="happy" color="#F60" size={ 60 } />
-            <h1>
-                { defaultProps.greeting }
-            </h1>
-            <ItemCount initial={ 0 } stock={ 10 } onAdd={ onAdd } />
-            <hr />
+            <h1>{ defaultProps.greeting }</h1>
             <ItemList products={products} />
-            <hr />
-            <ItemDetailContainer />
         </div>
     )
  }
