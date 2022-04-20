@@ -10,5 +10,13 @@
 
     div {
         margin: 0 1rem;
+
+        &.count {
+            margin: 0 0 !important;
+            
+            .item-count {
+                margin: 0 0 !important;                
+            }
+        }
     }
 }

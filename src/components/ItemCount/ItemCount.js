@@ -25,8 +25,8 @@ const ItemCount = ({initial, stock, onAdd}) => {
                     <Icon name="increase" size="16" color="#FFF" style={{ paddingBottom: '0px', paddingTop: '3px' }} />
                 </button>
             </div>
-            <div className="mt20">
-                <button type="button" onClick={ () => onAdd(count) } disabled={count === 0} className="btn solid second rounded">Añadir al carrito</button>
+            <div className="pt15">
+                <button type="button" onClick={ () => onAdd(count) } disabled={count === 0} className="btn rounded outline second">Añadir al carrito</button>
             </div>
         </div>
     );
