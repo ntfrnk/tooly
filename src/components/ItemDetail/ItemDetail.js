@@ -1,21 +1,20 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
+import { CartContext, addItem } from '../CartContext/CartContext';
 import './ItemDetail.scss';
 
 const ItemDetail = (item) => {
 
-    const [cart, setCart] = useState([]);
+    const cart = useContext(CartContext);
 
     const addToCart = (quantity) => {
         item = {
             ...item,
             quantity: quantity
         }
-        setCart([...cart, item]);
+        cart.addItem(item)
     }
-
-    console.log(cart);
 
     return(
         <>
@@ -29,7 +28,7 @@ const ItemDetail = (item) => {
                     <p>{item.detail}</p>
                     <p>{item.price}</p>
                     <div className="count pt10">
-                        { cart.length == 0 
+                        { ! cart.isInCart(item.id) 
                             ? 
                             <ItemCount initial={1} stock={25} onAdd={addToCart} /> 
                             : 

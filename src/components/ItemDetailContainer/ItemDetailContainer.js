@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
             new Promise((resolve, reject) => { 
                 resolve(AsyncMock)
             }).then((response) => {
-                setItem(response[urlParams.id])
+                setItem(response.find(item => item.id == urlParams.id))
             });
         }, 2000);
     }
