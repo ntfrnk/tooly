@@ -56,6 +56,11 @@
             color: $second-color;
             border-color: $second-color;
         }
+
+        &.danger {
+            color: $danger;
+            border-color: $danger;
+        }
     }
 
     &.solid {
@@ -76,6 +81,15 @@
 
             &:hover {
                 background: darken($second-color, 10%);
+            }
+        }
+
+        &.danger {
+            background: $danger;
+            border-color: $danger;
+
+            &:hover {
+                background: darken($danger, 10%);
             }
         }
     }

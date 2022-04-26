@@ -3,6 +3,7 @@ import Context from './components/CartContext/CartContext';
 import Header from './components/Header/Header'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Cart from './components/Cart/Cart'
 import './assets/App.scss'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 						<Route path="/" exact element={<ItemListContainer/>}/>
 						<Route path="/category/:category" exact element={<ItemListContainer/>}/>
 						<Route path="/detail/:id" exact element={<ItemDetailContainer/>}/>
+						<Route path="/cart" exact element={<Cart/>}/>
 					</Routes>
 				</div>
 			</BrowserRouter>
