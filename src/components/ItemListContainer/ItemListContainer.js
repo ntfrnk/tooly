@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import AsyncMock from '../../services/AsyncMock'
 import './ItemListContainer.scss';
-import Icon from '../Icon/Icon';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { firestoreDb } from '../../services/Firebase';
 
  const ItemListContainer = (props) => {
 
-    let urlParams = useParams();
+    let { category } = useParams();
 
     let defaultProps = {
         greeting: 'Hola mundo!'
@@ -17,34 +15,27 @@ import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
     defaultProps = { ...defaultProps, ...props }
 
-    let onAdd = (count) => {
-        console.log(`Se agregaron ${count} unidades`);
-    }
-
     const [products, setProducts] = useState([]);
 
-    const getProducts = () => {
-        setTimeout(() => {
-            new Promise((resolve, reject) => {
-                if(urlParams.category != undefined) {
-                    resolve(AsyncMock.filter(item => item.category_id == urlParams.category))
-                } else {
-                    resolve(AsyncMock)
-                }
-            }).then((resp) => {
-                setProducts(resp)
-            })
-        }, 2000);
-    }
-
     useEffect(() => {
-        getProducts()
-    }, []);
+
+        const collect = category 
+        ? query(collection(firestoreDb, 'products'), where('category', '==', category)) 
+        : collection(firestoreDb, 'products');
+
+        getDocs(collect).then(
+            response => {
+                const products = response.docs.map(doc => {
+                    return { id: doc.id, ...doc.data() }
+                })
+                setProducts(products)
+            }
+        );
+
+    }, [category]);
 
     return (
         <div className="greeting">
-            <Icon type="emoji" name="happy" color="#F60" size={ 60 } />
-            <h1>{ defaultProps.greeting }</h1>
             <ItemList products={products} />
         </div>
     )

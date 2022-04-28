@@ -10,10 +10,10 @@ const NavBar = () => {
 
     return (
         <nav>
-            <Link to="/category/1">Construcción</Link>
-            <Link to="/category/2">Electricidad</Link>
-            <Link to="/category/3">Carpintería</Link>
-            <Link to="/category/4">Plomería</Link>
+            <Link to="/category/home">Hogar</Link>
+            <Link to="/category/building">Construcción</Link>
+            <Link to="/category/electrics">Electricidad</Link>
+            <Link to="/category/ironworks">Herrería</Link>
             { cart.totalItems() != 0 ? <Link to="/cart"><CartWidget /></Link> : '' }
         </nav>
     )

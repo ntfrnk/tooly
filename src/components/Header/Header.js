@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import './Header.scss'
 
@@ -7,7 +8,9 @@ const Header = () => {
 		<header>
 			<div className="container flex">
 				<div className="logo">
-					tooly<span>.com</span>
+					<Link to="/">
+						tooly<span>.com</span>
+					</Link>
 				</div>
 				<NavBar />
 			</div>

@@ -15,11 +15,15 @@ header {
 			font-size: 2rem;
 			font-weight: 600;
 			line-height: 1.6rem;
-			color: #fff;
 			padding: 0 0;
 
-			span {
-				font-weight: 200;
+			a {
+				color: #fff;
+				text-decoration: none;
+
+				span {
+					font-weight: 200;
+				}
 			}
 		}
 	}

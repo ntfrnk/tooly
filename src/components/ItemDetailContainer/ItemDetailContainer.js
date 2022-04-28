@@ -2,27 +2,25 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import AsyncMock from '../../services/AsyncMock';
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { firestoreDb } from '../../services/Firebase';
+import { getDoc, doc } from 'firebase/firestore';
 import './ItemDetailContainer.scss';
 
 const ItemDetailContainer = () => {
 
     let [item, setItem] = useState({})
 
-    let urlParams = useParams();
-
-    const getItem = () => {
-        setTimeout(() => {
-            new Promise((resolve, reject) => { 
-                resolve(AsyncMock)
-            }).then((response) => {
-                setItem(response.find(item => item.id == urlParams.id))
-            });
-        }, 2000);
-    }
+    let { id } = useParams();
 
     useEffect(() => {
-        getItem()
-    }, []);
+        
+        getDoc(doc(firestoreDb, 'products', id)).then(
+            response => {
+                setItem({id: response.id, ...response.data()})
+            }
+        );
+
+    }, [id]);
 
     return (
         <>

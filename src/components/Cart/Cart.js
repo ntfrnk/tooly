@@ -9,9 +9,14 @@ const Cart = () => {
 
     const cart = useContext(CartContext);
 
+    console.log(cart)
+
     return (
         <div className="container">
-            <h1 className="py20">Carrito de compras</h1>
+            <h1 className="py20">
+                { cart.totalItems() != 0 ? <button onClick={ () => cart.clearCart() } className="btn pill outline second fr">Vaciar carrito</button> : '' }
+                Carrito de compras
+            </h1>
             <div className="cart">
                 { 
                     cart.totalItems() != 0 

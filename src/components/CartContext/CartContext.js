@@ -27,7 +27,7 @@ const Context = ({ children }) => {
     }
 
     const totalPrice = () => {
-        return cart.reduce((acc, item) => acc + (item.price * item.quantity), 0)
+        return cart.reduce((acc, item) => acc + (parseInt(item.price) * item.quantity), 0)
     }
 
     return (
