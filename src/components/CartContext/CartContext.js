@@ -30,8 +30,18 @@ const Context = ({ children }) => {
         return cart.reduce((acc, item) => acc + (parseInt(item.price) * item.quantity), 0)
     }
 
+    const generateDataOrder = (buyer, date) => {
+        const order = {
+            items: cart,
+            buyer: buyer,
+            date: date,
+            total: totalPrice()
+        }
+        return order;
+    }
+
     return (
-        <CartContext.Provider value={{ cart, setCart, addItem, removeItem, isInCart, clearCart, totalItems, totalPrice }}>
+        <CartContext.Provider value={{ cart, setCart, addItem, removeItem, isInCart, clearCart, totalItems, totalPrice, generateDataOrder }}>
             {children}
         </CartContext.Provider>
     )
