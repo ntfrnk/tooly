@@ -4,12 +4,12 @@
     margin: 3rem auto;
     padding: 2rem 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border: solid 1px lighten($black, 70%);
-    width: 70%;
 
     div {
         margin: 0 1rem;
+        flex-basis: 50%;
 
         &.count {
             margin: 0 0 !important;

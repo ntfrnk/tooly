@@ -12,6 +12,8 @@ const ItemDetailContainer = () => {
     let { id } = useParams();
 
     useEffect(() => {
+
+        setItem({});
         
         getDoc(doc(firestoreDb, 'products', id)).then(
             response => {

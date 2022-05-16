@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart'
+import Purchase from './components/Purchase/Purchase'
 import './assets/App.scss'
 
 function App() {
@@ -13,10 +14,11 @@ function App() {
 				<div className="App">
 					<Header/>
 					<Routes>
-						<Route path="/" exact element={<ItemListContainer/>}/>
-						<Route path="/category/:category" exact element={<ItemListContainer/>}/>
-						<Route path="/detail/:id" exact element={<ItemDetailContainer/>}/>
-						<Route path="/cart" exact element={<Cart/>}/>
+						<Route path="/" exact element={<ItemListContainer />}/>
+						<Route path="/category/:category" exact element={<ItemListContainer />}/>
+						<Route path="/detail/:id" exact element={<ItemDetailContainer />}/>
+						<Route path="/cart" exact element={<Cart />}/>
+						<Route path="/purchase" exact element={<Purchase />}/>
 					</Routes>
 				</div>
 			</BrowserRouter>

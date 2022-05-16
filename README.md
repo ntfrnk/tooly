@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Tooly Herramientas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tooly Herramientas es un sitio web comercial desarrollado para mejorar las ventas del cliente, y facilitar a los usuarios la tarea de comprar las herramientas que necesita para llevar adelante su proyecto de contrucción, mejora o refacción.
 
-## Available Scripts
+Este proyecto está desarrollado en ReactJS, y se conecta a una base de datos Cloud Firestore (Firebase), donde se almacenan los productos con sus respectivas categorías y el detalle de cada venta realizada a través de esta plataforma.
 
-In the project directory, you can run:
+# Instalación local
 
-### `npm start`
+## Pre-requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Antes de proceder con la instalación es importante contar con algunos requisitos:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Debes tener instalado NodeJS (versión 13 o superior).
+2. El gestor de paquetes NPM (Versión 7 o superior).
 
-### `npm test`
+Para instalar ambos requisitos, debes ingresar a la [página oficial de NodeJS](https://nodejs.org/es/download/), y descargar la versión que corresponda a tu sistema operativo, para luego instalarla.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instrucciones de instalación
 
-### `npm run build`
+Para poner en marcha esta aplicación de forma local, se debe realizar los siguientes pasos:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Descargar el proyecto de Github:
+    
+    ```git clone https://github.com/ntfrnk/tooly.git```	
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Instalar las dependencias de NPM:
+    
+    ```npm install```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Iniciar el servidor:
+    
+    ```npm start```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Puesta en producción (deployment)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para llevar este proyecto a producción, es necesario realizar los siguientes pasos:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Ejecutar el siguiente comando:
+    
+    ```npm build```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Copiar el contenido de la carpeta "build" al directorio público del servidor remoto (suelen usarse nombres como "htdocs", "www", o "public_html").
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Construido con 🛠️
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [ReactJS](https://reactjs.org/)
+* [SASS](https://sass-lang.com)
+* [Firebase / Firestore](https://firebase.google.com/)
+* [NodeJS y NPM](https://nodejs.org/es/download/)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# El autor
 
-### Analyzing the Bundle Size
+* **Franco Ocaranza** - [ntfrnk](https://github.com/ntfrnk)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+# Agradecimientos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+A [CoderHouse](https://coderhouse.com/), sus instructores y tutores, por su apoyo y acompañamiento en la creación de este proyecto.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Licencia
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este es un proyecto Open Source, y se encuentra bajo la Licencia [MIT](https://opensource.org/licenses/MIT).

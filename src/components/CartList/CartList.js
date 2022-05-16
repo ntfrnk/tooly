@@ -5,7 +5,7 @@ const CartList = ({item, cart}) => {
     return (
         <tr key={item.id}>
             <td><img src={item.image} width="130" /></td>
-            <td>{item.name}</td>
+            <td><span className="pl10">{item.name}</span></td>
             <td className="ar">${item.price}</td>
             <td className="ac">{item.quantity}</td>
             <td className="ar">${parseInt(item.price) * parseInt(item.quantity)}</td>

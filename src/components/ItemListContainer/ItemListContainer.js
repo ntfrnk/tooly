@@ -19,6 +19,8 @@ import { firestoreDb } from '../../services/Firebase';
 
     useEffect(() => {
 
+        setProducts([])
+
         const collect = category 
         ? query(collection(firestoreDb, 'products'), where('category', '==', category)) 
         : collection(firestoreDb, 'products');

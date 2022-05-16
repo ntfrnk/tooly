@@ -15,12 +15,14 @@ const ItemList = ({products}) => {
     return (
         <div className="container">
             <h1 className="pb30">Listado de productos</h1>
+            { localProducts.length != 0 ?
             <div className="listado">
                 {localProducts.map(product => (
                     <div className="item-container" key={product.id}>
                         <Item item={product} />
                     </div>))}
             </div>
+            : <div>Cargando productos...</div> }
         </div>
     );
 }

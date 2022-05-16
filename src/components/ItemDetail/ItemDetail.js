@@ -18,27 +18,34 @@ const ItemDetail = (item) => {
 
     return(
         <>
-            <h1 className="py20">Detalle del producto</h1>
-            <div className="item-detail">
-                <div>
-                    <img src={item.image} />
-                </div>
-                <div>
-                    <h1>{item.name}</h1>
-                    <p>{item.detail}</p>
-                    <p>{item.price}</p>
-                    <div className="count pt10">
-                        { ! cart.isInCart(item.id) 
+            <div className="container">
+                <h1 className="pt20">Detalle del producto</h1>
+                { item.id != undefined ?
+                <div className="item-detail">
+                    <div>
+                        <img src={item.image} />
+                    </div>
+                    <div>
+                        <h1>{item.name}</h1>
+                        <p className="f18">{item.description}</p>
+                        <p className="f40">${item.price}</p>
+                        <div className="count pt10">
+                            { 
+                            ! cart.isInCart(item.id) 
                             ? 
                             <ItemCount initial={1} stock={25} onAdd={addToCart} /> 
                             : 
                             <Link to="/cart" className="btn rounded second outline">Finalizar compra</Link>
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="ac">
-                <Link to="/">« Volver al listado</Link>
+                : 
+                <div className="item-detail">
+                    <div>Cargando producto...</div>
+                </div>
+
+                }
             </div>
         </>
     )
