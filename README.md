@@ -25,9 +25,9 @@ Para poner en marcha esta aplicación de forma local, se debe realizar los sigui
     
     ```git clone https://github.com/ntfrnk/tooly.git```	
 
-2. Instalar las dependencias de NPM:
+2. Ingresar al directorio del proyecto e instalar las dependencias de NPM:
     
-    ```npm install```
+    ```cd tooly && npm install```
 
 3. Iniciar el servidor:
     
