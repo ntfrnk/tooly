@@ -4,6 +4,8 @@ Tooly Herramientas es un sitio web comercial desarrollado para mejorar las venta
 
 Este proyecto está desarrollado en ReactJS, y se conecta a una base de datos Cloud Firestore (Firebase), donde se almacenan los productos con sus respectivas categorías y el detalle de cada venta realizada a través de esta plataforma.
 
+<img src="http://frankoca.com.ar/images/workflow.gif" />
+
 # Instalación local
 
 ## Pre-requisitos
